@@ -18,7 +18,15 @@ public class DeliveryController implements IDeliveryController{
     }
 
     @Override
-    public SendResult sendDelivery(Delivery delivery) {
-        return null;
+    public SendResult sendDelivery(Delivery delivery, DelMessage message) {
+        SendResult result = SendResult.SUCCESS;
+        for (String to : delivery.getRecepiens()) {
+            message.setTo(to);
+            if (this.sendMessage(message) == SendResult.FAILED) {
+                result = SendResult.FAILED;
+            }
+        }
+
+        return result;
     }
 }

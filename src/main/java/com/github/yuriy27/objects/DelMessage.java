@@ -9,6 +9,9 @@ public class DelMessage {
     private String text;
     private String to;
 
+    public DelMessage() {
+    }
+
     public DelMessage(String subject, String text, String to) {
         this.subject = subject;
         this.text = text;
@@ -23,9 +26,19 @@ public class DelMessage {
         return text;
     }
 
-
     public String getTo() {
         return to;
     }
 
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
 }

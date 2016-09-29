@@ -8,6 +8,6 @@ public interface IDeliveryController {
 
     public SendResult sendMessage(DelMessage message);
 
-    public SendResult sendDelivery(Delivery delivery);
+    public SendResult sendDelivery(Delivery delivery, DelMessage message);
 
 }
